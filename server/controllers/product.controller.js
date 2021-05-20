@@ -21,7 +21,7 @@ module.exports = {
     },
 
     //create method
-    create(req, res){
+    createProduct(req, res){
         console.log("create method initialized")
         const { title, price, description } = req.body;
         Product.create({
@@ -34,7 +34,7 @@ module.exports = {
     },
 
     //update method
-    update(req, res){
+    updateProduct(req, res){
         console.log("update method initialized")
         Product.findOneAndUpdate({_id: req.params.id}, req.body, {new:true, runValidators: true })
         .then((updateProduct) => res.json({Product: updateProduct }))
@@ -42,7 +42,7 @@ module.exports = {
     },
 
     //delete method
-    delete(req, res){
+    deleteProduct(req, res){
         console.log("delete method initialized")
         Product.deleteOne({ _id: req.params.id })
         .then(deleteProduct => res.json({Product: deleteProduct }))

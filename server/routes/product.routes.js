@@ -8,11 +8,11 @@ module.exports = (app) => {
     app.get('/api/product/:id', ProductController.getOne);
 
     //creates a new Product with create Method
-    app.post('/api/product/create', ProductController.create);
+    app.post('/api/product/create', ProductController.createProduct);
 
     //updates a Product based on id with Update Method
-    app.put("/api/product/update/:id", ProductController.update);
+    app.put("/api/product/update/:id", ProductController.updateProduct);
 
     //deletes a Product based on id with Delete Method
-    app.delete("/api/product/delete/:id", ProductController.delete);
+    app.delete("/api/product/delete/:id", ProductController.deleteProduct);
 }
